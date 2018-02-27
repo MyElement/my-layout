@@ -1,61 +1,66 @@
 <link rel="import" href="../polymer/polymer-element.html">
-
+<link rel="import" href="../my-style/my-style.html">
 <dom-module id="my-toolbar">
     <template>
-        <style>
-            :host {
-                display: block
+        <style include="my-style">
+            .navbar {
+                position: relative;
+                min-height: 50px;
+                margin-bottom: 20px;
+                border: 1px solid transparent;
+                font-family: CSChatThaiUI;
+            }
+            .navbar-default{
+                background-color: var(--nav-bar-background-color,#f8f8f8);
+            }
+            .navbar-default .navbar-brand{
+                color: var(--nav-bar-color,#777);
+            }
+            .navbar-header > ::slotted(.navbar-brand){
+                float: left;
+                height: 50px;
+                padding: 15px 15px;
+                font-size: 18px;
+                line-height: 20px;
+                text-decoration: none;
+            }
+            .navbar-header > ::slotted(.navbar-right){
+                float: right;
+                height: 50px;
+                padding: 15px 15px;
+                font-size: 18px;
+                line-height: 20px;
+                text-decoration: none;
+            }
+
+            .navbar-header{
+                margin-right: 15px;
+                margin-left: 15px;
+            }
+            nav{
+                padding-left: 0;
+                margin-bottom: 0;
+                list-style: none;
             }
         </style>
-
-        
-
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <slot></slot>
+            </div>
+        </nav>
     </template>
 
     <script>
-        /**
-         * `my-toolbar` Description
-         *
-         * @summary ShortDescription.
-         * @customElement
-         * @polymer
-         * @extends {Polymer.Element}
-         */
         class MyToolbar extends Polymer.Element {
-            /**
-             * String providing the tag name to register the element under.
-             */
+
             static get is() {
                 return 'my-toolbar';
             }
 
-            /**
-             * Object describing property-related metadata used by Polymer features
-             */
             static get properties() {
                 return {
-                    
+
                 };
-            }
-
-            /**
-             * Instance of the element is created/upgraded. Use: initializing state,
-             * set up event listeners, create shadow dom.
-             * @constructor
-             */
-            constructor() {
-                super();
-            }
-
-            /**
-             * Use for one-time configuration of your component after local DOM is initialized. 
-             */
-            ready() {
-                super.ready();
-
-                Polymer.RenderStatus.afterNextRender(this, function() {
-                    
-                });
             }
 
         }

@@ -10,7 +10,7 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../my-layout.html">
+    <link rel="import" href="../my-toolbar.html">
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
@@ -22,7 +22,11 @@
       <h3>Basic my-layout demo</h3>
       <demo-snippet>
         <template>
-          <my-layout></my-layout>
+          <my-toolbar>
+            <a class="navbar-brand" href="#">WebsiteName</a>
+            <!-- <input style="margin-top:1rem" type="text"> -->
+            <a class="navbar-right" href="#">Sign-in</a>
+          </my-toolbar>
         </template>
       </demo-snippet>
     </div>
